@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.artivisi</groupId>
+	<artifactId>php-maven-jetty</artifactId>
+	<packaging>php</packaging>
+	<name>Menjalankan PHP di Jetty dengan Maven</name>
+	<version>1.0-SNAPSHOT</version>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.phpunit</groupId>
+			<artifactId>phpunit5</artifactId>
+			<version>3.3.9</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.phpmaven</groupId>
+				<artifactId>maven-php-plugin</artifactId>
+				<version>1.1</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-2</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.phpmaven</groupId>
+						<artifactId>maven-php-plugin</artifactId>
+						<version>1.1</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>bundle-project-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>
+									php-webapp
+								</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.phpmaven</groupId>
+				<artifactId>maven-php-plugin</artifactId>
+				<version>1.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.4</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>report-only</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>
