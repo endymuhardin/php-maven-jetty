@@ -41,6 +41,15 @@
 
 	<build>
 		<plugins>
+		    <plugin>
+             <groupId>org.mortbay.jetty</groupId>
+             <artifactId>maven-jetty-plugin</artifactId>
+             <version>6.1.26</version>
+             <configuration>
+               <webAppSourceDirectory>${basedir}/src/main/php</webAppSourceDirectory>
+             </configuration>
+           </plugin>
+
 			<plugin>
 				<groupId>org.phpmaven</groupId>
 				<artifactId>maven-php-plugin</artifactId>
@@ -99,3 +108,4 @@
 		</plugins>
 	</reporting>
 </project>
+
