@@ -1,2 +1,11 @@
 # Maven Output
 target
+
+#Eclipse
+.buildpath
+.project
+.settings
+
+# Code Igniter
+user_guide
+
