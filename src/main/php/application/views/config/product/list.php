@@ -40,8 +40,8 @@
 			gridProductList = new dojox.grid.DataGrid({
 				store: dataStore = dojo.data.ObjectStore({objectStore: store}),
 				structure: [
-					{ name: "Product Code", field: "code", width: "100px" },
-					{ name: "Product Name", field: "name", width: "200px" }
+					{ name: "Product Code", field: "code", width: "200px" },
+					{ name: "Product Name", field: "name", width: "300px" }
 				]
 			}, "gridProductList");
 
@@ -65,6 +65,16 @@
 			font-size: 13px !important;
 			background: white;
 			color: #333;
+		}
+		
+		table {
+			padding: 5px;
+			
+		}
+		
+		td {
+			margin: 5px; 
+			padding: 5px;
 		}
 		
 		h1 {
